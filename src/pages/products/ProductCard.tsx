@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {makeStyles} from '@material-ui/styles';
 import {IProduct} from "../../inst/types/product";
 import {Typography} from "@material-ui/core";
+import Link from '../../inst/ui/Link';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -40,25 +41,27 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ProductCard: FC<IProduct> = (props) => {
-  const {image, description, price, sales} = props;
+  const {image, description, price, sales, id} = props;
   const mc = useStyles();
 
   return (
-    <div className={mc.root}>
-      <div className={mc.image}>
-        <img src={image} alt={description} />
-      </div>
-      <div className={mc.data}>
-        <Typography variant={'h6'}>{description}</Typography>
-        <div className={mc.price}>
-          Цена:&nbsp;
-          {
-            sales ? <><span className={mc.salesPrice}>{price}$</span>/{sales}</> : price
-          }
-          $
+    <Link href={{pathname: '/product/[id]', query: {id}}}>
+      <div className={mc.root}>
+        <div className={mc.image}>
+          <img src={image} alt={description} />
+        </div>
+        <div className={mc.data}>
+          <Typography variant={'h6'}>{description}</Typography>
+          <div className={mc.price}>
+            Цена:&nbsp;
+            {
+              sales ? <><span className={mc.salesPrice}>{price}$</span>/{sales}</> : price
+            }
+            $
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
