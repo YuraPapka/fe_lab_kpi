@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {makeStyles} from '@material-ui/styles';
-import {IProduct} from "./types";
+import {IProduct} from "../../inst/types/product";
 import {Typography} from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
