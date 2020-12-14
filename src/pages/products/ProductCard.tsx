@@ -7,9 +7,10 @@ const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
     padding: 10,
-    marginBottom: 10,
+    marginBottom: 15,
     position: 'relative',
     background: '#FDCFF399',
+    boxShadow: '-2px 2px 1px 4px #FDCFF333'
   },
   image: {
     width: '30%',
