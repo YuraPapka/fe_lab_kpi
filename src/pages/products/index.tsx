@@ -3,6 +3,8 @@ import ProductCard from "../../inst/ui/ProductCard";
 import {ILogicProps} from './types';
 import {GetServerSideProps} from 'next/types';
 import Link from "../../inst/ui/Link";
+import {getRequest} from "../../inst/hook/useRequest/request";
+import {onceFrom} from "../../inst/utils/random";
 
 const ProductList: FC<ILogicProps> = (props) => {
   const {products} = props;
@@ -24,8 +26,8 @@ const ProductList: FC<ILogicProps> = (props) => {
 
 export const getServerSideProps: GetServerSideProps<ILogicProps> = async () => {
   try {
-    const products = await fetch('https://heroku-mishyn.herokuapp.com/api/product')
-      .then((res: any) => res.json());
+    const products = await getRequest('https://heroku-mishyn.herokuapp.com/api/product');
+    const category = await getRequest('https://heroku-mishyn.herokuapp.com/api/category');
 
     if (!products) {
       return {
@@ -35,7 +37,7 @@ export const getServerSideProps: GetServerSideProps<ILogicProps> = async () => {
 
     return {
       props: {
-        products,
+        products: products.map((product) => ({...product, category: category.filter(() => onceFrom(4))})),
       },
     };
   } catch (e) {
