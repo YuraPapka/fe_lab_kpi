@@ -8,7 +8,7 @@ export interface ICustomProduct extends IProduct {
 }
 
 export interface ICustomReview extends IReview {
-  customer: ICustomer[];
+  customer: ICustomer;
 }
 
 export interface ILogicProps {
