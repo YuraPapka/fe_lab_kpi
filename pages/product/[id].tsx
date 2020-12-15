@@ -1,1 +1,1 @@
-export {default} from '../../src/pages/productCard';
+export {default, getServerSideProps} from '../../src/pages/productCard';

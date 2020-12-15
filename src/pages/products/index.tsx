@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
-import ProductCard from "./ProductCard";
+import ProductCard from "../../inst/ui/ProductCard";
 import {ILogicProps} from './types';
 import {GetServerSideProps} from 'next/types';
+import Link from "../../inst/ui/Link";
 
 const ProductList: FC<ILogicProps> = (props) => {
   const {products} = props;
@@ -11,8 +12,12 @@ const ProductList: FC<ILogicProps> = (props) => {
   return (
     <>
       {products ?
-        products.map((product) => <ProductCard key={product.id} {...product} />) :
-        'Нет продуктов удовлетворяющих критерии поиска'}
+        products.map((product) => (
+          <Link href={{pathname: '/product/[id]', query: {id: product.id}}} prefetch={true}>
+            <ProductCard key={product.id} {...product} />
+          </Link>
+        )) :
+        'Нет продуктов удовлетворяющих критерии поиска'}s
     </>
   );
 };
