@@ -9,8 +9,6 @@ import {onceFrom} from "../../inst/utils/random";
 const ProductList: FC<ILogicProps> = (props) => {
   const {products} = props;
 
-  console.log(products)
-
   return (
     <>
       {products ?
