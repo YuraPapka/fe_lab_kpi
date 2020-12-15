@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
 import {makeStyles} from '@material-ui/styles';
-import {IProduct} from "./types";
+import {IProduct} from "../types/product";
 import {Typography} from "@material-ui/core";
+import {ICategory} from "../types/category";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -37,10 +38,17 @@ const useStyles = makeStyles(() => ({
     textDecorationColor: 'red',
     fontSize: 16,
   },
+  category: {
+    fontSize: 16,
+  },
 }));
 
-const ProductCard: FC<IProduct> = (props) => {
-  const {image, description, price, sales} = props;
+interface IProps extends IProduct {
+  category?: ICategory[];
+}
+
+const ProductCard: FC<IProps> = (props) => {
+  const {image, description, price, sales, category} = props;
   const mc = useStyles();
 
   return (
@@ -57,6 +65,7 @@ const ProductCard: FC<IProduct> = (props) => {
           }
           $
         </div>
+        {!!category?.length && (<Typography className={mc.category}>Категории: {category.map((category) => category.name).join(', ')}</Typography>)}
       </div>
     </div>
   );
