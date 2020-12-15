@@ -1,7 +1,7 @@
 import React, {FC, useCallback} from 'react';
 import ProductCard from "../../inst/ui/ProductCard";
 import {GetServerSideProps} from "next";
-import {ILogicProps} from "./types";
+import {ICustomProduct, ILogicProps} from "./types";
 import {IProduct} from "../../inst/types/product";
 import {IReview} from "../../inst/types/review";
 import {ICategory} from "../../inst/types/category";
@@ -37,7 +37,7 @@ const ProductCardPage: FC<ILogicProps> = (props) => {
   </div>
 };
 
-export const getServerSideProps: GetServerSideProps<ILogicProps> = async ({query}) => {
+export const getServerSideProps: GetServerSideProps<ILogicProps, any> = async ({query}) => {
   try {
     const {id} = query;
 
@@ -65,7 +65,7 @@ export const getServerSideProps: GetServerSideProps<ILogicProps> = async ({query
         product: {
           ...product,
           category: category.filter(() => onceFrom(10)),
-        },
+        } as unknown as ICustomProduct,
         review: review.filter(() => onceFrom(5)).map((review) => ({
           ...review,
           customer: customers[randomInteger(customers.length - 1)],
