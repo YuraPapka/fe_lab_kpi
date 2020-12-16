@@ -58,14 +58,16 @@ const ProductCard: FC<IProps> = (props) => {
       </div>
       <div className={mc.data}>
         <Typography variant={'h6'}>{description}</Typography>
-        <div className={mc.price}>
+        <div id={'price'} className={mc.price}>
           Цена:&nbsp;
           {
             sales ? <><span className={mc.salesPrice}>{price}$</span>/{sales}</> : price
           }
           $
         </div>
-        {!!category?.length && (<Typography className={mc.category}>Категории: {category.map((category) => category.name).join(', ')}</Typography>)}
+        {!!category?.length && (<Typography className={mc.category}>
+          Категории: {category.map((c) => c.name).join(', ')}
+        </Typography>)}
       </div>
     </div>
   );
