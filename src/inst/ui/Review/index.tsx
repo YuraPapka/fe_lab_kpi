@@ -7,7 +7,7 @@ import {Typography} from "@material-ui/core";
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
-    background: '#C297B899',
+    background: '#FFFED099',
     boxShadow: '-1px 1px 1px 2px #C297B833',
     padding: 10,
     marginBottom: 15,
@@ -46,7 +46,7 @@ const Review: FC<IProps> = (props) => {
         <img src={defaultImgUrl || avatar} alt={first_name} />
       </div>
       <div className={mc.content}>
-        <Typography>{`Пользователь: ${first_name} ${last_name}${city ? ', из ' + city : ''}`}</Typography>
+        <Typography>{`Рецензент: ${first_name} ${last_name}${city ? ', из ' + city : ''}`}</Typography>
         <Typography className={mc.comment}>{comment}</Typography>
       </div>
     </div>

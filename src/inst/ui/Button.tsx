@@ -8,7 +8,7 @@ import {Button} from "@material-ui/core";
 //       color: '#40434E',
 //       transition: '1s all ease',
 //       '&:hover': {
-//         background: '#FDCFF3',
+//         background: '#FFDC7B',
 //       }
 //     }}
 
@@ -18,7 +18,7 @@ const Btn = withStyles(() => ({
     color: '#40434E',
     // transition: '0.3s all ease',
     '&:hover': {
-      background: '#FDCFF3',
+      background: '#FFDC7B',
     },
   },
 }))(Button) as typeof Button;

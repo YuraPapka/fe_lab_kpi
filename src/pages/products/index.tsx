@@ -19,7 +19,7 @@ const ProductList: FC<ILogicProps> = (props) => {
             <ProductCard key={product.id} {...product} />
           </Link>
         )) :
-        'Нет продуктов удовлетворяющих критерии поиска'}s
+        'Нет продуктов удовлетворяющих критерии поиска'}
     </>
   );
 };
@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps<ILogicProps> = async () => {
 
     return {
       props: {
-        products: products.map((product) => ({...product, category: category.filter(() => onceFrom(4))})),
+        products: products.map((product) => ({...product, category: category.filter(() => onceFrom(4))})).splice(0, 4),
       },
     };
   } catch (e) {

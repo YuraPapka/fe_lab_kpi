@@ -1,4 +1,4 @@
-import React, {FC, useCallback} from 'react';
+import React, {FC} from 'react';
 import ProductCard from "../../inst/ui/ProductCard";
 import {GetServerSideProps} from "next";
 import {ICustomProduct, ILogicProps} from "./types";
@@ -11,23 +11,12 @@ import {randomInteger, onceFrom} from "../../inst/utils/random";
 import {isEmpty} from 'lodash';
 import {Typography} from "@material-ui/core";
 import Review from "../../inst/ui/Review";
-import Button from "../../inst/ui/Button";
 
 const ProductCardPage: FC<ILogicProps> = (props) => {
   const {product, review} = props;
 
-  const onBuy = useCallback(() => {
-    alert('Функционал не реализован!');
-  }, []);
-
   return <div>
     <ProductCard {...product} />
-    <Button
-      onClick={onBuy}
-      style={{marginLeft: 'calc(80%)'}}
-    >
-      Купить
-    </Button>
     {!!review?.length && (
       <>
         <Typography variant={'h6'}>Отзывы:</Typography>
@@ -36,6 +25,8 @@ const ProductCardPage: FC<ILogicProps> = (props) => {
     )}
   </div>
 };
+
+
 
 export const getServerSideProps: GetServerSideProps<ILogicProps, any> = async ({query}) => {
   try {
