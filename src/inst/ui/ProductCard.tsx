@@ -80,7 +80,6 @@ const ProductCard: FC<IProps> = (props) => {
         <div className={mc.price}>
           Рейтинг:&nbsp;
           {randomInteger(5, 3)}
-          $
         </div>
         {!!category?.length && (<Typography className={mc.category}>Категории: {category.map((category) => category.name).join(', ')}</Typography>)}
       </div>
