@@ -44,27 +44,12 @@ const useStyles = makeStyles(() => ({
     marginBottom: 28,
   },
   description: {
-    // maxHeight: 128,
-    // lineHeight: 32,
-    // overflowX: 'hidden',
   },
 }));
 
 interface IProps extends IProduct {
   category?: ICategory[];
 }
-
-// {
-//   product: [{
-//     image: 'url',
-//     description: 'test',
-//     category: [{id: '1', name: 'text'}, {id: '1', name: 'text'}, ]
-//   }]
-//   review: [{
-//     customer: {avatar: 'url', first_name: 'str', last_name: 'str', city: 'str'},
-//     comment: 'text',
-//   },],
-// }
 
 const ProductCard: FC<IProps> = (props) => {
   const {image, description, category} = props;
