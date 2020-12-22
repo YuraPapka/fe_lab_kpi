@@ -1,0 +1,604 @@
+<html lang="en">
+<head><title>KPI labs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="next-head-count" content="2">
+  <style id="jss-server-side">.MuiTypography-root {
+    margin: 0;
+  }
+
+  .MuiTypography-body2 {
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+  }
+
+  .MuiTypography-body1 {
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+  }
+
+  .MuiTypography-caption {
+    font-size: 0.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+  }
+
+  .MuiTypography-button {
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+  }
+
+  .MuiTypography-h1 {
+    font-size: 6rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+  }
+
+  .MuiTypography-h2 {
+    font-size: 3.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+  }
+
+  .MuiTypography-h3 {
+    font-size: 3rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.167;
+    letter-spacing: 0em;
+  }
+
+  .MuiTypography-h4 {
+    font-size: 2.125rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.5rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.334;
+    letter-spacing: 0em;
+  }
+
+  .MuiTypography-h6 {
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+  }
+
+  .MuiTypography-subtitle1 {
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+  }
+
+  .MuiTypography-subtitle2 {
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.57;
+    letter-spacing: 0.00714em;
+  }
+
+  .MuiTypography-overline {
+    font-size: 0.75rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 2.66;
+    letter-spacing: 0.08333em;
+    text-transform: uppercase;
+  }
+
+  .MuiTypography-srOnly {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .MuiTypography-alignLeft {
+    text-align: left;
+  }
+
+  .MuiTypography-alignCenter {
+    text-align: center;
+  }
+
+  .MuiTypography-alignRight {
+    text-align: right;
+  }
+
+  .MuiTypography-alignJustify {
+    text-align: justify;
+  }
+
+  .MuiTypography-noWrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .MuiTypography-gutterBottom {
+    margin-bottom: 0.35em;
+  }
+
+  .MuiTypography-paragraph {
+    margin-bottom: 16px;
+  }
+
+  .MuiTypography-colorInherit {
+    color: inherit;
+  }
+
+  .MuiTypography-colorPrimary {
+    color: #3f51b5;
+  }
+
+  .MuiTypography-colorSecondary {
+    color: #f50057;
+  }
+
+  .MuiTypography-colorTextPrimary {
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .MuiTypography-colorTextSecondary {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .MuiTypography-colorError {
+    color: #f44336;
+  }
+
+  .MuiTypography-displayInline {
+    display: inline;
+  }
+
+  .MuiTypography-displayBlock {
+    display: block;
+  }
+
+  .makeStyles-root-2 {
+    display: flex;
+    padding: 10px;
+    position: relative;
+    background: #FFDC7B99;
+    box-shadow: -2px 2px 1px 4px #FFDC7B33;
+    margin-bottom: 15px;
+  }
+
+  .makeStyles-image-3 {
+    width: 30%;
+  }
+
+  .makeStyles-image-3 > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .makeStyles-data-4 {
+    color: #070707;
+    width: 70%;
+    padding-left: 24px;
+  }
+
+  .makeStyles-price-5 {
+    color: #40434E;
+    float: right;
+    right: 15px;
+    bottom: 15px;
+    position: absolute;
+    font-size: 24px;
+  }
+
+  .makeStyles-salesPrice-6 {
+    font-size: 16px;
+    text-decoration: line-through;
+    text-decoration-color: red;
+  }
+
+  .makeStyles-category-7 {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .makeStyles-link-1 {
+    display: block;
+    text-decoration: none;
+  }</style>
+  <script charset="utf-8" src="/_next/static/chunks/0.js"></script>
+  <style data-jss="" data-meta="MuiTypography">
+    .MuiTypography-root {
+      margin: 0;
+    }
+
+    .MuiTypography-body2 {
+      font-size: 0.875rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.43;
+      letter-spacing: 0.01071em;
+    }
+
+    .MuiTypography-body1 {
+      font-size: 1rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.00938em;
+    }
+
+    .MuiTypography-caption {
+      font-size: 0.75rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.66;
+      letter-spacing: 0.03333em;
+    }
+
+    .MuiTypography-button {
+      font-size: 0.875rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500;
+      line-height: 1.75;
+      letter-spacing: 0.02857em;
+      text-transform: uppercase;
+    }
+
+    .MuiTypography-h1 {
+      font-size: 6rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 300;
+      line-height: 1.167;
+      letter-spacing: -0.01562em;
+    }
+
+    .MuiTypography-h2 {
+      font-size: 3.75rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.00833em;
+    }
+
+    .MuiTypography-h3 {
+      font-size: 3rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.167;
+      letter-spacing: 0em;
+    }
+
+    .MuiTypography-h4 {
+      font-size: 2.125rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.235;
+      letter-spacing: 0.00735em;
+    }
+
+    .MuiTypography-h5 {
+      font-size: 1.5rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.334;
+      letter-spacing: 0em;
+    }
+
+    .MuiTypography-h6 {
+      font-size: 1.25rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500;
+      line-height: 1.6;
+      letter-spacing: 0.0075em;
+    }
+
+    .MuiTypography-subtitle1 {
+      font-size: 1rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.00938em;
+    }
+
+    .MuiTypography-subtitle2 {
+      font-size: 0.875rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 500;
+      line-height: 1.57;
+      letter-spacing: 0.00714em;
+    }
+
+    .MuiTypography-overline {
+      font-size: 0.75rem;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+      font-weight: 400;
+      line-height: 2.66;
+      letter-spacing: 0.08333em;
+      text-transform: uppercase;
+    }
+
+    .MuiTypography-srOnly {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .MuiTypography-alignLeft {
+      text-align: left;
+    }
+
+    .MuiTypography-alignCenter {
+      text-align: center;
+    }
+
+    .MuiTypography-alignRight {
+      text-align: right;
+    }
+
+    .MuiTypography-alignJustify {
+      text-align: justify;
+    }
+
+    .MuiTypography-noWrap {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .MuiTypography-gutterBottom {
+      margin-bottom: 0.35em;
+    }
+
+    .MuiTypography-paragraph {
+      margin-bottom: 16px;
+    }
+
+    .MuiTypography-colorInherit {
+      color: inherit;
+    }
+
+    .MuiTypography-colorPrimary {
+      color: #3f51b5;
+    }
+
+    .MuiTypography-colorSecondary {
+      color: #f50057;
+    }
+
+    .MuiTypography-colorTextPrimary {
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    .MuiTypography-colorTextSecondary {
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    .MuiTypography-colorError {
+      color: #f44336;
+    }
+
+    .MuiTypography-displayInline {
+      display: inline;
+    }
+
+    .MuiTypography-displayBlock {
+      display: block;
+    }
+  </style>
+  <style data-jss="" data-meta="makeStyles">
+    .makeStyles-root-2 {
+      display: flex;
+      padding: 10px;
+      position: relative;
+      background: #FFDC7B99;
+      box-shadow: -2px 2px 1px 4px #FFDC7B33;
+      margin-bottom: 15px;
+    }
+
+    .makeStyles-image-3 {
+      width: 30%;
+    }
+
+    .makeStyles-image-3 > img {
+      width: 100%;
+      height: auto;
+    }
+
+    .makeStyles-data-4 {
+      color: #070707;
+      width: 70%;
+      padding-left: 24px;
+    }
+
+    .makeStyles-price-5 {
+      color: #40434E;
+      float: right;
+      right: 15px;
+      bottom: 15px;
+      position: absolute;
+      font-size: 24px;
+    }
+
+    .makeStyles-salesPrice-6 {
+      font-size: 16px;
+      text-decoration: line-through;
+      text-decoration-color: red;
+    }
+
+    .makeStyles-category-7 {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+  </style>
+  <style data-jss="" data-meta="makeStyles">
+    .makeStyles-root-9 {
+      display: flex;
+      padding: 10px;
+      background: #FFFED099;
+      box-shadow: -1px 1px 1px 2px #C297B833;
+      margin-bottom: 15px;
+    }
+
+    .makeStyles-avatar-10 {
+      width: 50px;
+      flex-basis: 50px;
+    }
+
+    .makeStyles-avatar-10 > img {
+      width: 50px;
+      height: auto;
+    }
+
+    .makeStyles-content-11 {
+      margin-left: 16px;
+    }
+
+    .makeStyles-comment-12 {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body cz-shortcut-listen="true">
+<div id="__next">
+  <div>
+    <div class="makeStyles-root-2">
+      <div class="makeStyles-image-3"><img src="https://marmelab.com/posters/animals-1.jpeg"
+                                           alt="Doloremque ab tenetur officia possimus officiis aperiam eum. Eos qui enim non doloribus odio adipisci tempore explicabo. Molestiae aut ea quibusdam tempora vero. Omnis est aut ab doloremque dolorum fugiat.">
+      </div>
+      <div class="makeStyles-data-4"><h6 class="MuiTypography-root makeStyles-description-8 MuiTypography-h6">Doloremque
+        ab tenetur officia possimus officiis aperiam eum. Eos qui enim non doloribus odio adipisci tempore explicabo.
+        Molestiae aut ea quibusdam tempora vero. Omnis est aut ab doloremque dolorum fugiat.</h6>
+        <div class="makeStyles-price-5">Рейтинг:&nbsp;5</div>
+        <p class="MuiTypography-root makeStyles-category-7 MuiTypography-body1">Категории: city</p></div>
+    </div>
+    <h6 class="MuiTypography-root MuiTypography-h6">Отзывы:</h6>
+    <div class="makeStyles-root-9">
+      <div class="makeStyles-avatar-10"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+                                             alt="Fay"></div>
+      <div class="makeStyles-content-11"><p class="MuiTypography-root MuiTypography-body1">Рецензент: Fay Glover</p>
+        <p class="MuiTypography-root makeStyles-comment-12 MuiTypography-body1">Aut nihil veniam voluptas. Qui rem omnis
+          facilis laborum officia suscipit rem. Voluptatibus vel adipisci quisquam et sit minus. Dolor voluptas quo
+          porro.
+
+          Ex reiciendis aut accusantium. Dolor assumenda porro rerum deserunt asperiores dolorem ut et. Dignissimos
+          laborum qui ut totam autem in veniam. Dolorum alias et. Voluptatum autem vero dolorem.
+
+          Nam quia consequatur corrupti aliquid quibusdam harum. Eos omnis nam et occaecati cumque earum eum. Non natus
+          voluptates. Quia est nulla.
+
+          Provident dolores numquam eum dolor et. Dicta eligendi sint expedita iure vitae minima voluptatem. Error magni
+          eveniet nihil recusandae sunt.
+
+          Enim in quia. Voluptatibus rerum veritatis vel fuga voluptas quas. Impedit consequatur facere numquam hic
+          repellendus quo autem iure voluptatibus. Voluptatem atque saepe et porro.</p></div>
+    </div>
+    <div class="makeStyles-root-9">
+      <div class="makeStyles-avatar-10"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+                                             alt="Bridgette"></div>
+      <div class="makeStyles-content-11"><p class="MuiTypography-root MuiTypography-body1">Рецензент: Bridgette
+        Considine</p>
+        <p class="MuiTypography-root makeStyles-comment-12 MuiTypography-body1">Ratione quia rerum minima in aut iusto
+          ipsum. Quaerat necessitatibus aliquid soluta saepe aspernatur rerum a dolores praesentium. Ea qui praesentium
+          sit tempora. Quis est cupiditate facere ea. Sint incidunt doloribus.
+
+          Et voluptatibus eligendi quod molestiae aspernatur nam non dicta unde. Impedit qui incidunt fuga. Recusandae
+          expedita quis atque qui dolore id sit. Natus nostrum quibusdam sed occaecati.
+
+          Qui similique qui earum. Molestiae nisi vitae recusandae. Earum natus quis quia. Nam provident error quae eum.
+          Molestiae porro et repellendus nam facere est. Iste ut voluptatum qui assumenda.
+
+          Dolorem eius dolores est libero quia deserunt provident molestias et. Cumque sed dolorum ipsa. Vel
+          necessitatibus quos voluptate natus facilis et dolores.</p></div>
+    </div>
+    <div class="makeStyles-root-9">
+      <div class="makeStyles-avatar-10"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+                                             alt="Emmalee"></div>
+      <div class="makeStyles-content-11"><p class="MuiTypography-root MuiTypography-body1">Рецензент: Emmalee Wolf, из
+        Wilmerborough</p>
+        <p class="MuiTypography-root makeStyles-comment-12 MuiTypography-body1">Error aut provident ut ad est. Iure
+          voluptas aperiam molestiae tempore sit nihil. Quo optio unde id dolor ipsa sit est id autem. Quisquam quia non
+          maiores alias atque ut libero iure. Est sit et voluptas nobis praesentium harum omnis labore laboriosam.
+
+          Ex consequatur iusto et explicabo tempore et fuga. Repellendus blanditiis quam laudantium qui alias
+          consequatur veritatis quis. Quis enim similique deserunt praesentium exercitationem. Beatae tempora quo ut aut
+          et. Dolores itaque earum qui harum autem non voluptatem. Aut fuga voluptas adipisci vel ut maxime corrupti qui
+          est.
+
+          Temporibus non ipsum nemo accusantium. Consequuntur odit aspernatur. Temporibus nam voluptatem minus vel sequi
+          et itaque. Tenetur autem non sed. Ad in et eligendi veritatis ut voluptas. Reprehenderit ea similique earum
+          deleniti ex aspernatur eos quod.
+
+          Quae velit occaecati magnam culpa. Aut esse ea ut maxime commodi. Nam nostrum voluptas quia.
+
+          Quisquam pariatur voluptatibus aut. Ullam est atque.</p></div>
+    </div>
+    <div class="makeStyles-root-9">
+      <div class="makeStyles-avatar-10"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+                                             alt="Narciso"></div>
+      <div class="makeStyles-content-11"><p class="MuiTypography-root MuiTypography-body1">Рецензент: Narciso Rau, из
+        Dixieview</p>
+        <p class="MuiTypography-root makeStyles-comment-12 MuiTypography-body1">Officiis qui sequi suscipit ea
+          consequatur reprehenderit unde. Aut minus minus. Ea dolorum accusamus numquam. Id est placeat ut. Consequatur
+          qui praesentium totam suscipit error mollitia.
+
+          Fugiat libero nisi nihil. Illo necessitatibus non ex inventore aut voluptatem nobis laudantium. Doloribus
+          laborum mollitia qui. Modi labore dolorem molestias quae. Ea qui facere vero.
+
+          Mollitia unde ut. Ut magnam rerum amet amet. Qui doloremque dolores ut minus atque ab quidem provident autem.
+
+          Tempore modi aut nisi. Aut possimus possimus corrupti quam provident et dicta.</p></div>
+    </div>
+    <div class="makeStyles-root-9">
+      <div class="makeStyles-avatar-10"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+                                             alt="Paula"></div>
+      <div class="makeStyles-content-11"><p class="MuiTypography-root MuiTypography-body1">Рецензент: Paula Leuschke, из
+        Franeckiview</p>
+        <p class="MuiTypography-root makeStyles-comment-12 MuiTypography-body1">Sint voluptatem veniam fugiat dolorem et
+          consequuntur quisquam nesciunt atque. Delectus quis nostrum reprehenderit voluptatum omnis repudiandae a illum
+          vel.</p></div>
+    </div>
+    <div class="makeStyles-root-9">
+      <div class="makeStyles-avatar-10"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
+                                             alt="Bridgette"></div>
+      <div class="makeStyles-content-11"><p class="MuiTypography-root MuiTypography-body1">Рецензент: Bridgette
+        Considine</p>
+        <p class="MuiTypography-root makeStyles-comment-12 MuiTypography-body1">In numquam dolorem laborum ratione velit
+          velit distinctio sapiente. Blanditiis reprehenderit ut. Consequatur iusto ducimus quod dolore aut.
+
+          Sed qui provident aliquid sed qui ad. Vero possimus sint qui. Molestiae rerum magnam. Unde quod expedita in.
+
+          Et excepturi quia distinctio quam nihil quo facilis sed. Molestias illo dolor quasi reiciendis aliquam
+          quisquam vel.</p></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
